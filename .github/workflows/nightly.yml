@@ -18,23 +18,13 @@ jobs:
     - name: Install ghc
       run: |
         ghcup install ghc --set 9.10
-        ghcup install cabal --set latest
-
-    - name: Update from Hackage
-      run: |
-        cabal update
-
-    - name: Install alex, happy
-      run: |
-        which alex
-        which happy
-        cabal install happy
-        cabal install alex
+        ghcup install cabal --set 3.14
 
     - name: Install dependencies
       run: |
           ghc --version
           cabal --version
+          cabal update
           cabal build --dependencies-only -fembed_data_files -fnightly pandoc-cli
     - name: Build and install artifact
       run: |
@@ -59,14 +49,9 @@ jobs:
       run: |
         ghcup install ghc --set 9.10
         ghcup install cabal --set 3.14
-    - name: update from Hackage
-      run: |
-        cabal update
-    - name: Install alex, happy
-      run: |
-        cabal install alex happy
     - name: Install dependencies
       run: |
+          cabal update
           cabal build --dependencies-only -fembed_data_files -fnightly pandoc-cli
     - name: Build artifacts
       shell: cmd
@@ -98,14 +83,9 @@ jobs:
         ghcup install ghc --set 9.10
         ghcup install cabal --set 3.14
         echo "$HOME/.ghcup/bin" >> "${GITHUB_PATH}"
-    - name: Update from Hackage
-      run: |
-        cabal update
-    - name: Install alex, happy
-      run: |
-        cabal install alex happy
     - name: Install dependencies
       run: |
+          cabal update
           cabal build --dependencies-only -fnightly -fembed_data_files -fhttp pandoc-cli
     - name: Build artifacts
       run: |
