@@ -24,9 +24,9 @@ jobs:
       run: |
         cabal update
 
-    - name: Install happy
+    - name: Install alex, happy
       run: |
-        cabal install happy
+        cabal install alex happy
 
     - name: Install dependencies
       run: |
@@ -59,9 +59,9 @@ jobs:
     - name: update from Hackage
       run: |
         cabal update
-    - name: Install happy
+    - name: Install alex, happy
       run: |
-        cabal install happy
+        cabal install alex happy
     - name: Install dependencies
       run: |
           cabal build --dependencies-only -fembed_data_files -fnightly pandoc-cli
@@ -98,9 +98,9 @@ jobs:
     - name: Update from Hackage
       run: |
         cabal update
-    - name: Install happy
+    - name: Install alex, happy
       run: |
-        cabal install happy
+        cabal install alex happy
     - name: Install dependencies
       run: |
           cabal build --dependencies-only -fnightly -fembed_data_files -fhttp pandoc-cli
