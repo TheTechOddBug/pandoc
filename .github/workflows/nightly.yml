@@ -20,6 +20,10 @@ jobs:
         ghcup install ghc --set 9.10
         ghcup install cabal --set 3.14
 
+    - name: Install happy
+      run: |
+        cabal install happy
+
     - name: Install dependencies
       run: |
           ghc --version
@@ -49,6 +53,9 @@ jobs:
       run: |
         ghcup install ghc --set 9.10
         ghcup install cabal --set 3.14
+    - name: Install happy
+      run: |
+        cabal install happy
     - name: Install dependencies
       run: |
           cabal update
@@ -83,6 +90,9 @@ jobs:
         ghcup install ghc --set 9.10
         ghcup install cabal --set 3.14
         echo "$HOME/.ghcup/bin" >> "${GITHUB_PATH}"
+    - name: Install happy
+      run: |
+        cabal install happy
     - name: Install dependencies
       run: |
           cabal update
