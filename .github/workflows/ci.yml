@@ -75,7 +75,6 @@ jobs:
       run: |
         ghcup install ghc --set ${{ matrix.versions.ghc }}
         ghcup install cabal --set ${{ matrix.versions.cabal }}
-        ghcup install stack --set latest # just for alex and happy!
 
     # declare/restore cached things
 
@@ -148,7 +147,6 @@ jobs:
       run: |
         ghcup install ghc --set 9.10
         ghcup install cabal --set latest
-        ghcup install stack --set latest # just for alex and happy!
 
     # declare/restore cached things
 
